@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aluno</title>
+  <meta name="description" content="Because last night was worth it.">
+  <meta name="theme-color" content="#101010" />
+  <style>
+    /* Page background to match edges in case of letterboxing */
+    html, body{
+      height:100%;
+      margin:0;
+      background:#101010;
+    }
+    /* Container fills viewport */
+    .vh{
+      min-height:100svh; /* supports mobile dynamic viewport */
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+    }
+    /* Image should scale to cover viewport without distortion */
+    .hero{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    /* Prevent long-press save hints on iOS if desired */
+    img{ -webkit-user-select:none; user-select:none; -webkit-touch-callout:none; }
+  </style>
+</head>
+<body>
+  <!--
+    This page shows a single full-screen image.
+    We use <picture> to serve a mobile-specific image under 640px width.
+    Replace assets/desktop.jpg and assets/mobile.jpg with your own exports if you update the Canva design.
+  -->
+  <main class="vh">
+    <picture>
+      <source srcset="assets/mobile.jpg" media="(max-width: 640px)">
+      <img src="assets/desktop.jpg" alt="Aluno — Because last night was worth it." class="hero" loading="eager" fetchpriority="high">
+    </picture>
+  </main>
+</body>
+</html>
